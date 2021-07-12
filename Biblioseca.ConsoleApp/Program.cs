@@ -19,13 +19,17 @@ namespace Biblioseca.ConsoleApp
 
             ISession session = sessionFactory.OpenSession();
 
-            Author author = new Author();
-            author.FirstName = "Steve";
-            author.LastName = "Rogers";
+            Book book = new Book();
+            /* author.FirstName = "Steve";
+             author.LastName = "Rogers"; */
+            book.Title = "Operación Masacre";
+            book.AuthorId = 1;
+            book.Description = "Operacion Masacre";
+            book.Category = "Policial";
+            book.ISBN = "123456";
+            session.Save(book);
 
-            session.Save(author);
-
-            Console.WriteLine(author.Id);
+            Console.WriteLine(book.Id);
             Console.ReadKey();
         }
     }
